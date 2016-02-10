@@ -13,10 +13,15 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-    名前：
-    <%= f.text_field :name %>
-    
-    内容：
-    <%= f.text_field :body %>
+  <div class="form-group">
+    <label for="inputName">名前</label>
+    <%= f.text_field :name, class: "form-control", id: "inputName" %>
+  </div>
+  <div class="form-group">
+    <label for="inputContents">内容</label>
+    <%= f.text_area :body, class: "form-control", id: "inputContents", rows: "5" %>
+  </div>
+  <div style="text-align:center; padding:20px;">
     <%= f.submit class: "btn btn-sm btn-primary" %>
+  </div>
 <% end %>
